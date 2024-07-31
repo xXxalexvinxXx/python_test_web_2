@@ -1,0 +1,10 @@
+address: https://test-stand.gb.ru
+driver_path: chromedriver.exe
+sleep_time: 3
+wait: 5
+browser: chrome
+user: salvadore
+pass: 9a5da6365b
+title: 'Test title'
+descript: 'Test description'
+cont: 'Test content is here'
