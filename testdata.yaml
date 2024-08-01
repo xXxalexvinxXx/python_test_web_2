@@ -1,7 +1,7 @@
 address: https://test-stand.gb.ru
 driver_path: chromedriver.exe
-sleep_time: 3
-wait: 5
+sleep_time: 1
+wait: 2
 browser: chrome
 user: salvadore
 pass: 9a5da6365b

@@ -98,3 +98,7 @@ class Site:
         """
         self.driver.get(testdata['address'])
         time.sleep(testdata['sleep_time'])
+
+    def refresh_site(self):
+        self.driver.refresh()
+

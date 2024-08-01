@@ -9,6 +9,7 @@ with open('testdata.yaml') as f:
 # Имя пользователя для использования в тестах
 name = testdata['user']
 
+
 @pytest.fixture(scope='module')
 def site():
     """
@@ -21,6 +22,7 @@ def site():
     yield site
     site.close()
 
+
 # Фикстуры для селекторов элементов на странице
 
 @pytest.fixture()
@@ -32,6 +34,7 @@ def x_selector1():
     """
     return '//*[@id="login"]/div[1]/label/input'
 
+
 @pytest.fixture()
 def x_selector2():
     """
@@ -40,6 +43,7 @@ def x_selector2():
     :return: XPath селектор элемента ввода пароля.
     """
     return '//*[@id="login"]/div[2]/label/input'
+
 
 @pytest.fixture()
 def x_selector3():
@@ -50,6 +54,7 @@ def x_selector3():
     """
     return '//*[@id="app"]/main/div/div/div[2]/h2'
 
+
 @pytest.fixture()
 def x_selector4():
     """
@@ -58,6 +63,7 @@ def x_selector4():
     :return: XPath селектор элемента имени пользователя.
     """
     return '//*[@id="app"]/main/nav/ul/li[3]/a'
+
 
 @pytest.fixture()
 def btn_selector():
@@ -68,6 +74,7 @@ def btn_selector():
     """
     return 'button'
 
+
 @pytest.fixture()
 def err1():
     """
@@ -76,6 +83,7 @@ def err1():
     :return: Ожидаемый текст ошибки.
     """
     return '401'
+
 
 @pytest.fixture()
 def er2():
@@ -86,6 +94,7 @@ def er2():
     """
     return 'Hello, {}'.format(name)
 
+
 # Фикстуры для элементов поста
 
 @pytest.fixture()
@@ -94,8 +103,10 @@ def post_title_selector():
     Фикстура для получения селектора поля ввода заголовка поста.
 
     :return: XPath селектор поля ввода заголовка поста.
+    //*[@id="create-item"]/div/div/div[1]/div/label/input
     """
-    return '//*[@id="post_title"]'
+    return '//*[@id="create-item"]/div/div/div[1]/div/label/input'
+
 
 @pytest.fixture()
 def post_description_selector():
@@ -103,8 +114,10 @@ def post_description_selector():
     Фикстура для получения селектора поля ввода описания поста.
 
     :return: XPath селектор поля ввода описания поста.
+    //*[@id="create-item"]/div/div/div[2]/div/label/span
     """
-    return '//*[@id="post_description"]'
+    return '//*[@id="create-item"]/div/div/div[2]/div/label/span/textarea'
+
 
 @pytest.fixture()
 def post_content_selector():
@@ -113,7 +126,8 @@ def post_content_selector():
 
     :return: XPath селектор поля ввода содержания поста.
     """
-    return '//*[@id="post_content"]'
+    return '//*[@id="create-item"]/div/div/div[3]/div/label/span/textarea'
+
 
 @pytest.fixture()
 def create_post_button_selector():
@@ -121,8 +135,10 @@ def create_post_button_selector():
     Фикстура для получения селектора кнопки создания нового поста.
 
     :return: CSS селектор кнопки создания поста.
+    #create-btn
     """
-    return 'button#create-post'
+    return 'button#create-btn'
+
 
 @pytest.fixture()
 def save_post_button_selector():
@@ -130,8 +146,10 @@ def save_post_button_selector():
     Фикстура для получения селектора кнопки сохранения поста.
 
     :return: CSS селектор кнопки сохранения поста.
+    #create-item > div > div > div:nth-child(7) > div > button > div
     """
-    return 'button#save-post'
+    return '.mdc-button'
+
 
 @pytest.fixture()
 def new_post_title_selector():
@@ -140,7 +158,8 @@ def new_post_title_selector():
 
     :return: XPath селектор элемента заголовка нового поста.
     """
-    return '//*[@id="app"]/main/div[1]/h1'
+    return '/html/body/div[1]/main/div/div[1]/h1'
+
 
 # Фикстуры для данных поста
 
@@ -153,6 +172,7 @@ def post_title():
     """
     return testdata['title']
 
+
 @pytest.fixture()
 def post_description():
     """
@@ -161,6 +181,7 @@ def post_description():
     :return: Описание нового поста.
     """
     return testdata['descript']
+
 
 @pytest.fixture()
 def post_content():
